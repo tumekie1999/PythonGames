@@ -12,5 +12,23 @@ def guess(x):
     
     print(f"you won! you guessed {guess} correctly")
 
-guess(100)
+
+
+def guess2(x):
+    low = 1
+    high = x
+    feedback = ''
+    while feedback != 'c' and low != high:
+        guess = random.randint(low,high)
+        feedback = input(f"is {guess} (H) for too high, (L) for too low or (C) for correct:   ").lower()
+        if feedback == 'h':
+            high = guess - 1 
+        elif feedback == 'l':
+            low = guess + 1
+    
+    print(f"CPU won! it guessed {guess} correctly!")
+
+#guess(100)
+
+guess2(100)
 
